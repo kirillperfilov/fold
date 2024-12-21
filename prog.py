@@ -50,19 +50,7 @@ plt.ylabel('Потери')
 plt.grid()
 plt.show()
 
-# Функция для отображения матрицы тестовых данных в виде тепловой карты
-def display_test_data_heatmap(X_test):
-    plt.figure(figsize=(12, 8))
-    sns.heatmap(X_test, annot=True, fmt=".2f", cmap='viridis', xticklabels=wine.feature_names)
-    plt.title('Матрица тестовых данных')
-    plt.xlabel('Характеристики')
-    plt.ylabel('Примеры')
-    plt.show()
-
 # Оценка точности модели на тестовом наборе
 predictions = mlp.predict(X_test)
 accuracy = accuracy_score(y_test, predictions)
 print(f'Точность на тестовом наборе: {accuracy * 100:.2f}%')
-
-# Вызов функции для отображения матрицы тестовых данных в отдельном окне
-display_test_data_heatmap(X_test)
